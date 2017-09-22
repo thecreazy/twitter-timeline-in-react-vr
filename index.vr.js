@@ -1,34 +1,48 @@
 import React from 'react';
-import {
-  AppRegistry,
-  asset,
-  Pano,
-  Text,
-  View,
-} from 'react-vr';
+import {AppRegistry, asset, Pano,View,Text,Image} from 'react-vr';
+import CylindricalPanel from 'CylindricalPanel'
+
+import Twtext from './components/Twtext/'
+import Twtweet from './components/Twtweet/'
+
+import twitterTimeline from './mocks/timeline.json'
+
 
 export default class WelcomeToVR extends React.Component {
   render() {
+    const _width = 4096
+    const _height = 720
+    let boxes = twitterTimeline.map((el,index)=>{
+      return (<Twtweet 
+                  key={index}
+                  tweet={el}
+              >
+              </Twtweet>
+             ) 
+    })
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')}/>
-        <Text
-          style={{
-            backgroundColor: '#777879',
-            fontSize: 0.8,
-            fontWeight: '400',
-            layoutOrigin: [0.5, 0.5],
-            paddingLeft: 0.2,
-            paddingRight: 0.2,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            transform: [{translate: [0, 0, -3]}],
+        <Pano source={asset('chess-world.jpg')} />
+          <CylindricalPanel layer={{
+            width:_width,
+            height: _height
           }}>
-          hello
-        </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: 1,
+              width:_width,
+              height: _height
+            }}
+          >
+            {boxes}
+          </View>
+        </CylindricalPanel>
       </View>
-    );
+    )
   }
-};
+}
 
 AppRegistry.registerComponent('WelcomeToVR', () => WelcomeToVR);
