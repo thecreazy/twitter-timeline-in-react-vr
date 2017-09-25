@@ -8,7 +8,7 @@ import Twtweet from './components/Twtweet/'
 import twitterTimeline from './mocks/timeline.json'
 
 
-export default class WelcomeToVR extends React.Component {
+export default class TwitterVR extends React.Component {
   makeBoxes(timeline){
     return boxes = timeline.map((el,index)=>{
       return (<Twtweet 
@@ -34,7 +34,7 @@ export default class WelcomeToVR extends React.Component {
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'space-around',
               opacity: 1,
               width:_width,
               height: _height
@@ -48,4 +48,4 @@ export default class WelcomeToVR extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('WelcomeToVR', () => WelcomeToVR);
+AppRegistry.registerComponent('TwitterVR', () => TwitterVR);

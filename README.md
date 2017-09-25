@@ -9,7 +9,7 @@
 - Yarn or npm client
 
 #### What's included?
-- [x] [React VR](https://webpack.js.org)
+- [x] [React VR](https://facebook.github.io/react-vr/)
 
 
 ## How to start the project
@@ -27,11 +27,11 @@ yarn start
 
 #### Build
 ```
-yarn run build
+yarn run bundle
 ```
 
 
-## Responsabile di progetto
+## Project Owner
 
-Riccardo Canella @thecreazy : [canella_riccardo@icloud.com](mailto:canella_riccardo@icloud.com)
+Riccardo Canella @thecreazy - you can find the project article on [Medium](https://medium.com/@riccardocanella/my-first-experience-with-react-vr-2f36d6ddad4a)
 

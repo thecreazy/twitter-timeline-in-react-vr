@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-vr';
+import {View} from 'react-vr';
 import Twimage from '../Twimage/'
 import Twtext from '../Twtext/'
 import style from './style'
