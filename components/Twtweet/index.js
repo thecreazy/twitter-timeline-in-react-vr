@@ -1,14 +1,18 @@
 import React from 'react';
-import {View, Text, Image} from 'react-vr';
+import {View, Text} from 'react-vr';
+import Twimage from '../Twimage/'
+import Twtext from '../Twtext/'
+import style from './style'
+
 
 export default class Twtweet extends React.Component {
     render() {
         let props = this.props.tweet
         return (
-            <View style={{ margin: 16, width: 600, height:75, backgroundColor: '#CF3C7E'}}>
-               <Image source={{uri: props.user.profile_image_url_https }} />
-               <Text style={{fontSize: 14, textAlign: 'center'}}>@{props.user.screen_name}</Text>
-               <Text style={{fontSize: 14, textAlign: 'center'}}>@{props.text}</Text>
+            <View style={style.default}>
+               <Twimage source={{uri: props.user.profile_image_url_https }} />
+               <Twtext type={'top'} message={'@'+props.user.screen_name} />
+               <Twtext type={'bottom'} message={props.text} />
             </View>
         );
       }

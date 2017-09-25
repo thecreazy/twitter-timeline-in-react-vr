@@ -9,10 +9,8 @@ import twitterTimeline from './mocks/timeline.json'
 
 
 export default class WelcomeToVR extends React.Component {
-  render() {
-    const _width = 4096
-    const _height = 720
-    let boxes = twitterTimeline.map((el,index)=>{
+  makeBoxes(timeline){
+    return boxes = timeline.map((el,index)=>{
       return (<Twtweet 
                   key={index}
                   tweet={el}
@@ -20,9 +18,14 @@ export default class WelcomeToVR extends React.Component {
               </Twtweet>
              ) 
     })
+  }
+  render() {
+    const _width = 4096
+    const _height = 720
+    let boxes = this.makeBoxes(twitterTimeline)
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')} />
+        <Pano source={asset('wallpaper.jpg')} />
           <CylindricalPanel layer={{
             width:_width,
             height: _height
